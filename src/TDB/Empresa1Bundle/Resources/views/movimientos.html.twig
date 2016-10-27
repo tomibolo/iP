@@ -1,0 +1,48 @@
+{% extends 'TDBEmpresa1Bundle::menu.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('/css/datepicker.css') }}" />
+{% endblock %}
+
+{% block body %}
+
+<div class="espacio margen">
+    <div class="col-md-8 col-md-offset-2">
+    {{ include('TDBEmpresa1Bundle:acciones:reportes.html.twig',{'reporte':reporte}) }}
+    </div>
+</div>
+<div class="margen espacio"></div>
+    <div class="col-md-8 col-md-offset-2">
+        <hr class="divider">
+        {{ include('TDBEmpresa1Bundle:acciones:inserta.html.twig',{'form':form}) }}
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+        <hr class="divider">
+ {{ include('TDBEmpresa1Bundle:acciones:listar.html.twig',{'movimientos':movimientos}) }}
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('/js/bootstrap-datepicker.js') }}"></script>
+    {#FUNCION PARA EL PICKDATE#}
+    <script>
+        $('.datepicker').datepicker({
+            format: 'dd-mm-yyyy',
+            startDate: '-3d'
+        });
+    </script>
+    {#FUNCION PARA CUADRO DE BORRADO#}
+    <script>
+        $("#borraid").confirm({
+            title: false, // hides the title.
+            content: '¿Esta seguro que desea eliminar el registro?!',
+            confirmButton: 'SI',
+            cancelButton: 'No' ,
+            confirmButtonClass: 'btn-success btn-sm',
+            cancelButtonClass: 'btn-danger btn-sm'
+        });
+    </script>
+
+{% endblock %}

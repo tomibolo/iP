@@ -1,0 +1,66 @@
+<?php
+
+namespace TDB\Empresa1Bundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+
+/**
+ * Dim_AplicarseA
+ *
+ * @ORM\Table(name="Dim_AplicarseA")
+ * @ORM\Entity(repositoryClass="TDB\Empresa1Bundle\Repository\Dim_AplicarseARepository")
+ */
+class Dim_AplicarseA
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="AplicarseA", type="string", length=50)
+     */
+    private $aplicarseA;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set aplicarseA
+     *
+     * @param string $aplicarseA
+     *
+     * @return Dim_AplicarseA
+     */
+    public function setAplicarseA($aplicarseA)
+    {
+        $this->aplicarseA = $aplicarseA;
+
+        return $this;
+    }
+
+    /**
+     * Get aplicarseA
+     *
+     * @return string
+     */
+    public function getAplicarseA()
+    {
+        return $this->aplicarseA;
+    }
+}

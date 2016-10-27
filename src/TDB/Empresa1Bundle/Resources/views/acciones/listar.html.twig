@@ -1,0 +1,46 @@
+
+    <table class="table-responsive table-striped">
+        <thead>
+        <tr class="trmovimeintos">
+            <th>Fecha</th>
+            <th>Tipo</th>
+            <th>Aplica A</th>
+            <th>Concepto</th>
+            <th>Item</th>
+            <th>Proveedor</th>
+            <th>Medio</th>
+            <th>Importe</th>
+            <th>Nota</th>
+            <th></th>
+            <td></td>
+            <td></td>
+        </tr>
+        </thead>
+        {% for x in movimientos %}
+            <tr>
+                <td>{{ x.fecha|date("d/m/Y")  }}</td>
+                <td>{{ x.idTipo.tipo }}</td>
+                <td>{{ x.idAplicarsea.aplicarseA }}</td>
+                <td>{{ x.concepto }}</td>
+                <td>{{ x.idItem.item }}</td>
+                <td>{{ x.idProveedor.proveedor }}</td>
+                <td>{{ x.idMediopago.mediopago }}</td>
+                {% if x.valor <0 %}
+                    <td><font color="#ff0000">${{ x.valor|number_format(2, '.', ',') }}</font> </td>
+                {% else %}
+                    <td>${{ x.valor|number_format(2, ',', '.') }}</td>
+                {% endif %}
+                <td>{{ x.nota }}</td>
+                <td>
+                <td><a href="{{ path('tdb_empresa1_edita',{'id': x.id}) }}?page={{ app.request.query.get("page")| default("1") }}" class="glyphicon glyphicon-pencil" style="color:#000000"></a></td>
+                <td><a href="{{ path('tdb_empresa1_borra',{'id': x.id}) }}" id ="borraid" class="asd glyphicon glyphicon-remove" style="color:#ff0000"></a></td>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(movimientos) }}
+    </div>
+
+

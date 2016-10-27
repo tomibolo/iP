@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>{% block title %}{{ titulo }}{% endblock %}</title>
+
+    <!-- Bootstrap core CSS -->
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('/css/bootstrap-theme.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('/css/estilos.css') }}" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" href="{{ asset('/css/jquery-confirm.css') }}" />
+        <link rel="stylesheet" href="{{ asset('/less/jquery-confirm.less') }}" />
+    {% endblock %}
+
+</head>
+<body>
+<header class="navbar navbar-inverse navbar-fixed-top  bs-docs-nav" role="banner">
+    <div class="container">
+        <div class="navbar-header ">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{{ path('tdb_empresa1_home') }}" class="navbar-brand">Estampida</a>
+        </div>
+        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="{{ path('tdb_empresa1_movimientos') }}">Movimientos</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Reportes <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ path('tdb_empresa1_reporte_egresos') }}">Egresos</a></li>
+                        <li><a href="#">Ingresos</a></li>
+                        <li><a href="#">Cierres</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Cuentas</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{{ path('tdb_user_logout') }}">Salir</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</header>
+<div class="espacio"></div>
+
+<div>
+    {% for flash_message in app.session.flashbag.get('notice') %}
+        <div class="alert alert-success">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+    {% for flash_message in app.session.flashbag.get('error') %}
+        <div class="alert alert-danger">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+    {% for flash_message in app.session.flashbag.get('warning') %}
+        <div class="alert alert-warning">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+</div>
+{% block body %}
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('js/jquery-3.1.0.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery-confirm.min.js') }}"></script>
+{% endblock %}
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

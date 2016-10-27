@@ -1,0 +1,84 @@
+{% extends 'TDBEmpresa1Bundle::menu.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('/css/datepicker.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <div class="col-md-10 col-md-offset-1">
+
+
+        <h1>Movimientos - Editando</h1>
+        <table class="table-responsive table-striped">
+            <thead>
+            {{ form_start(form) }}
+            <th>{{ form_widget(form.submit) }}
+            <a href="{{ path('tdb_empresa1_movimientos') }}" class="btn btn-danger btn-sm submit">Cancelar</a></th>
+            <tr>
+                <th>Fecha</th>
+                <th>Tipo</th>
+                <th>Aplica A</th>
+                <th>Concepto</th>
+                <th>Item</th>
+                <th>Proveedor</th>
+                <th>Medio</th>
+                <th>Importe</th>
+                <th>Nota</th>
+            </tr>
+            </thead>
+            {% for x in movimientos %}
+            {% if x.id==id  %}
+                <tr>
+                    {{ form_start(form) }}
+                    <th>{{ form_widget(form.fecha) }}</th>
+                    <th>{{ form_widget(form.idTipo) }}</th>
+                    <th>{{ form_widget(form.idAplicarsea) }}</th>
+                    <th>{{ form_widget(form.Concepto) }}</th>
+                    <th>{{ form_widget(form.idItem) }}</th>
+                    <th>{{ form_widget(form.idProveedor) }}</th>
+                    <th>{{ form_widget(form.idMediopago) }}</th>
+                    <th>{{ form_widget(form.valor) }}</th>
+                    <th>{{ form_widget(form.nota) }}</th>
+                    {{ form_end(form) }}
+                </tr>
+            {% else %}
+
+                <tr>
+                    <td class="corrido">{{ x.fecha|date("d/m/Y")  }}</td>
+                    <td class="corrido">{{ x.idTipo.tipo }}</td>
+                    <td class="corrido">{{ x.idAplicarsea.aplicarsea }}</td>
+                    <td class="corrido">{{ x.Concepto }}</td>
+                    <td class="corrido">{{ x.idItem.item }}</td>
+                    <td class="corrido">{{ x.idProveedor.proveedor }}</td>
+                    <td class="corrido">{{ x.idMediopago.mediopago }}</td>
+                    {% if x.valor <0 %}
+                        <td class="corrido"><font color="#ff0000">${{ x.valor|number_format(2, '.', ',') }}</font> </td>
+                    {% else %}
+                        <td class="corrido">${{ x.valor|number_format(2, ',', '.') }}</td>
+                    {% endif %}
+                    <td class="corrido">{{ x.nota }}</td>
+                </tr>
+            {% endif %}
+            {% endfor %}
+
+    </table>
+        {# display navigation #}
+        <div class="navigation">
+            {{ knp_pagination_render(movimientos) }}
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('/js/bootstrap-datepicker.js') }}"></script>
+    <script>
+        $('.datepicker').datepicker();
+    </script>
+{% endblock %}
+
+
+
+
+

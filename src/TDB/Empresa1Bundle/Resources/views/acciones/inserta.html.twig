@@ -1,0 +1,23 @@
+ <table>
+            <thead>
+            {{ form_start(form) }}
+            <tr>
+                <th>Fecha<br> {{ form_widget(form.fecha) }}</th>
+                <th>Tipo {{ form_widget(form.idTipo) }}</th>
+                <th>Aplica A {{ form_widget(form.idAplicarsea) }}</th>
+                <th>Concepto {{ form_widget(form.Concepto)}}</th>
+                <th>Item {{ form_widget(form.idItem)}}</th>
+            </tr>
+            <tr>
+                <th>Proveedor {{ form_widget(form.idProveedor) }}</th>
+                <th>Medio {{ form_widget(form.idMediopago) }}</th>
+                <th>Importe {{ form_widget(form.valor) }}</th>
+                <th>Nota {{ form_widget(form.nota) }}</th>
+                <th><br>{{ form_widget(form.submit) }}</th>
+            </tr>
+
+            {{ form_end(form) }}
+            </thead>
+            <tbody>
+ </table>
+

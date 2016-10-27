@@ -1,0 +1,65 @@
+<?php
+
+namespace TDB\Empresa1Bundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Dim_MedioPago
+ *
+ * @ORM\Table(name="Dim_MedioPago")
+ * @ORM\Entity(repositoryClass="TDB\Empresa1Bundle\Repository\Dim_MedioPagoRepository")
+ */
+class Dim_MedioPago
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mediopago", type="string", length=30)
+     */
+    private $mediopago;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set mediopago
+     *
+     * @param string $mediopago
+     *
+     * @return Dim_MedioPago
+     */
+    public function setMediopago($mediopago)
+    {
+        $this->mediopago = $mediopago;
+
+        return $this;
+    }
+
+    /**
+     * Get mediopago
+     *
+     * @return string
+     */
+    public function getMediopago()
+    {
+        return $this->mediopago;
+    }
+}

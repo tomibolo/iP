@@ -1,0 +1,65 @@
+<?php
+
+namespace TDB\Empresa1Bundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Dim_Concepto
+ *
+ * @ORM\Table(name="Dim_Concepto")
+ * @ORM\Entity(repositoryClass="TDB\Empresa1Bundle\Repository\Repository\Dim_ConceptoRepository")
+ */
+class Dim_Concepto
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Concepto", type="string", length=50)
+     */
+    private $concepto;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set concepto
+     *
+     * @param string $concepto
+     *
+     * @return Dim_Concepto
+     */
+    public function setConcepto($concepto)
+    {
+        $this->concepto = $concepto;
+
+        return $this;
+    }
+
+    /**
+     * Get concepto
+     *
+     * @return string
+     */
+    public function getConcepto()
+    {
+        return $this->concepto;
+    }
+}

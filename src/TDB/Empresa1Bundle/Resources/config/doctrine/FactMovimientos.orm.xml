@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="TDB\Empresa1Bundle\Entity\FactMovimientos" table="Fact_Movimientos">
+    <indexes>
+      <index name="IDX_E882A5DF8E60ABC3" columns="id_aplicarsea"/>
+      <index name="IDX_E882A5DF943B391C" columns="id_item"/>
+      <index name="IDX_E882A5DF96F5D4E9" columns="id_proveedor"/>
+      <index name="IDX_E882A5DFCDE0367F" columns="id_mediopago"/>
+      <index name="IDX_E882A5DFFB0D0145" columns="id_tipo"/>
+    </indexes>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="fecha" type="datetime" column="fecha" nullable="true"/>
+    <field name="concepto" type="string" column="concepto" length="100" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="valor" type="float" column="valor" precision="53" scale="0" nullable="false"/>
+    <field name="nota" type="string" column="nota" length="100" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="fecAlta" type="datetime" column="fec_alta" nullable="true"/>
+    <field name="fecMod" type="datetime" column="fec_mod" nullable="true"/>
+    <field name="usuAlta" type="string" column="usu_alta" length="50" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="usuMod" type="string" column="usu_mod" length="50" nullable="true">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="estado" type="integer" column="estado" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <many-to-one field="idTipo" target-entity="DimTipo" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_tipo" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idProveedor" target-entity="DimProveedor" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_proveedor" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idMediopago" target-entity="DimMediopago" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_mediopago" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idItem" target-entity="DimItem" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_item" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idAplicarsea" target-entity="DimAplicarsea" fetch="LAZY">
+      <join-columns>
+        <join-column name="id_aplicarsea" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,17 @@
+{% extends 'TDBEmpresa1Bundle::menu.html.twig' %}
+{% block body %}
+    <div class="col-md-2 col-md-offset-1">
+        <a href="{{ path('tdb_empresa1_reporte_egresos_exporta', {'formato': 'EXCEL'})}}">
+        <img src="/imagenes/icono_excel.png" alt="Excel" style="width:50px;height:50px;">
+        </a>
+        <a href="{{ path('tdb_empresa1_reporte_egresos_exporta', {'formato': 'PDF'})}}">
+            <img src="/imagenes/icono_pdf.png" alt="PDF" style="width:50px;height:50px;">
+        </a>
+    </div>
+
+<div style="HEIGHT:100px;">
+    {{ reporte | raw }}
+</div>
+
+{% endblock %}
+

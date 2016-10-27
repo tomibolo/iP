@@ -1,0 +1,47 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    encoders:
+        Symfony\Component\Security\Core\User\UserInterface: plaintext
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+      our_db_provider:
+        entity:
+          class: TDBAdministracionBundle:Users
+          property: username
+          manager_name: administracion
+
+    access_denied_url: tdb_user_login
+
+    firewalls:
+        default:
+            anonymous: ~
+            http_basic: ~
+            form_login:
+              login_path: /user/login
+              check_path: /user/login_check
+              username_parameter: _username
+              password_parameter: _password
+            logout:
+              path: /user/logout
+              target: /user/login
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            anonymous: ~
+            # activate different ways to authenticate
+
+            # http_basic: ~
+            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
+
+            # form_login: ~
+            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+
+    access_control:
+        - { path: ^/user/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/routing, roles: [IS_AUTHENTICATED_FULLY] }
+        - { path: ^/empresa1/*, roles: [ROLE_EMPRESA1,ROLE_ADMIN] }
+        #- { path: ^/empresa1/$, roles: [ROLE_EMPRESA1,ROLE_ADMIN] }

@@ -1,0 +1,107 @@
+/*@font-face {
+    font-family: orange-juice;
+    src: url(/fonts/orange_juice.ttf);
+}
+
+
+.orange-menu {
+    font-family: orange-juice;
+    font-size: 200%;
+}*/
+.espacio {
+    padding-bottom: 60px;
+}
+.margen {
+    margin-bottom: 10pt;
+}
+
+/*
+Generic Styling, for Desktops/Laptops
+*/
+
+td, th{
+    padding: 6px;
+    text-align: left;
+}
+/*Estilo de campos Formulario Insert*/
+.tipo{width: 150px; padding: 0px;}
+.aplicaa,.concepto{width: 150px;padding: 0px; }
+.proveedor{width: 180px;padding: 0px; }
+.medio{width: 150px;padding: 0px; }
+.importe{width: 150px;}
+.nota{width: 150px;}
+.submit{width: 70px;}
+.corrido {
+    padding-left: 10px;
+}
+
+/*Color de ListaMovimientos Header*/
+.trmovimeintos{
+    background-color: #245269;
+}
+.trmovimeintos > th {
+    color:#ffffff;
+}
+
+
+.suggest-element{
+    margin-left:5px;
+    margin-top:5px;
+    width:350px;
+    cursor:pointer;
+}
+#suggestions {
+    width:350px;
+    height:150px;
+    overflow: auto;
+}
+
+.navbar {
+    width: 100%;
+    white-space: nowrap;
+}
+
+
+/*PAGINACION*/
+ul.pagination li a {
+    background-color: #245269;
+    color: #ffffff;
+}
+
+
+ul.pagination li.active>span {
+    background-color: #ffffff;
+    color: #245269;
+    border-color: lightgray;
+}
+ul.pagination li.active>span:hover{
+    background-color: #ffffff;
+    color: #245269;
+    border-color: lightgray;
+}
+
+
+/*NAVBAR*/
+
+.navbar-inverse { background-color: rgba(36, 83, 106, 0.92)}
+.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: rgba(36, 83, 106, 0.1)}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #245269}
+.dropdown-menu { background-color: #FFFFFF}
+.dropdown-toggle:active, .open .dropdown-toggle {background:#245269 !important; color:#FFFFFF !important;}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #245269}
+.navbar-inverse { background-image: none; }
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-image: none; }
+.navbar-inverse { border-color: #878787}
+.navbar-inverse .navbar-brand { color: #FFFFFF}
+.navbar-inverse .navbar-brand:hover { color: #FFFFFF}
+.navbar-inverse .navbar-nav>li>a { color: #C2C2C2}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { color: #FFFFFF}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { color: #FFFFFF}
+.navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus { color: #FFFFFF}
+.dropdown-menu>li>a { color: #333333}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { color: #FFFFFF}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-top-color: #999999}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #999999}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
+

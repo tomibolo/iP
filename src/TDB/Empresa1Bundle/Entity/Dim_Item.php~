@@ -1,0 +1,65 @@
+<?php
+
+namespace TDB\Empresa1Bundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Dim_Item
+ *
+ * @ORM\Table(name="Dim_Item")
+ * @ORM\Entity(repositoryClass="TDB\Empresa1Bundle\Repository\Dim_ItemRepository")
+ */
+class Dim_Item
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     * 
+     * @ORM\Column(name="item", type="string", length=50)
+     */
+    private $item;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set item
+     *
+     * @param string $item
+     *
+     * @return Dim_Item
+     */
+    public function setItem($item)
+    {
+        $this->item = $item;
+
+        return $this;
+    }
+
+    /**
+     * Get item
+     *
+     * @return string
+     */
+    public function getItem()
+    {
+        return $this->item;
+    }
+}

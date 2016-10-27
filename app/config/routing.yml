@@ -1,0 +1,51 @@
+#app:
+#    resource: "@AppBundle/Controller/"
+#    type:     annotation
+
+
+#Administracion
+tdb_home:
+    path:     /
+    defaults: {_controller: TDBAdministracionBundle:Security:login}
+tdb_routing:
+    path:     /routing
+    defaults: {_controller: TDBAdministracionBundle:Security:routing}
+
+
+#Empresa1
+tdb_empresa1_home:
+    path:     /empresa1/
+    defaults: {_controller: TDBEmpresa1Bundle:Movimientos:index}
+tdb_empresa1_movimientos:
+    path:     /empresa1/movimientos
+    defaults: {_controller: TDBEmpresa1Bundle:Movimientos:movimientos}
+tdb_empresa1_edita:
+    path:     /empresa1/edita/{id}
+    defaults: {_controller: TDBEmpresa1Bundle:Edita:edita}
+tdb_empresa1_borra:
+    path:     /empresa1/borra/{id}
+    defaults: {_controller: TDBEmpresa1Bundle:Movimientos:borra}
+
+
+#Empresa1 - Reportes - Egresos
+tdb_empresa1_reporte_egresos:
+    path:     /empresa1/reportes/Egresos
+    defaults: {_controller: TDBEmpresa1Bundle:Reportes:reporteEgresos}
+tdb_empresa1_reporte_egresos_exporta:
+    path:     /empresa1/reportes/Egresos/{formato}/
+    defaults: {_controller: TDBEmpresa1Bundle:Reportes:reporteEgresosExporta}
+
+
+
+
+#Autentication
+tdb_user_login:
+    path:     /user/login
+    defaults: {_controller: TDBAdministracionBundle:Security:login}
+tdb_user_check:
+    path:     /user/login_check
+    defaults: {_controller: TDBAdministracionBundle:Security:loginCheck}
+tdb_user_logout:
+    path:     /user/logout
+
+

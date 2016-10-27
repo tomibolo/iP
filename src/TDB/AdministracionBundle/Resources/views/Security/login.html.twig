@@ -1,0 +1,73 @@
+{% block body %}
+    <!DOCTYPE html>
+    <html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>InPyme</title>
+
+    <!-- Bootstrap core CSS -->
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('/css/bootstrap-theme.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('/css/estilos.css') }}" />
+        <link rel="stylesheet" href="{{ asset('/css/login.css') }}" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    {% endblock %}
+
+</head>
+
+    <div class="container">
+        <form action="{{ path('tdb_user_check') }}" method="post" class="form-signin">
+            <h1 class="form-signin-heading">{{ 'Iniciar Sesion'|trans }}</h1>
+
+            {% if error %}
+                <div class="text-danger">
+                    <p>
+                        <strong>
+                            {{ error.messageKey|trans(error.messageData, 'security')| replace({"Invalid credentials." : "Usuario o contraseña incorrecta"}) }}
+                        </strong>
+                    </p>
+                </div>
+            {% endif %}
+
+            <label for="username" class="sr-only">{{ 'Username'|trans }}:</label>
+            <input type="text" id="username" class="form-control" name="_username" value="{{ last_username }}" placeholder="{{ 'Usuario'|trans }}" required autofocus />
+
+            <label for="password" class="sr-only">{{ 'Password'|trans }}:</label>
+            <input type="password" id="password" class="form-control" name="_password" placeholder="{{ 'Contraseña'|trans }}" required />
+
+            <input type="hidden" name="_target_path" value="tdb_routing" />
+
+            <button type="submit" class="btn btn-lg btn-primary btn-block">{{ 'Iniciar'|trans }}</button>
+        </form>
+    </div> <!-- /container -->
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="{{ asset('js/jquery-3.1.0.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    {#<script src="{{ asset('js/autocompleter-jqueryui.js') }}"></script>#}
+    {#<script src="//code.jquery.com/jquery-1.12.4.js"></script>#}
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    {#<script>
+         $(function() {
+             $( "#form_tipo" ).autocomplete({
+                 source: "{{ path('city_autocomplete') }}",
+                 minLength: 2
+             });
+         });
+     </script>#}
+
+{% endblock %}
+</body>
+
+    </html>

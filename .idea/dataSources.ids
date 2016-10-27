@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="SQL Server (Microsoft) - @192.168.1.103" uuid="a9454ff6-0988-4cfd-883e-6eb0454d5bb4">
+    <database-info product="Microsoft SQL Server" version="11.00.2100" jdbc-version="4.0" driver-name="Microsoft JDBC Driver 4.0 for SQL Server" driver-version="4.0.2206.100">
+      <extra-name-characters>$#@</extra-name-characters>
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <database-model serializer="dbm" rdbms="MSSQL" format-version="2.5">
+      <database id="1" name="master">
+        <object-id>1</object-id>
+        <collation>Modern_Spanish_CI_AS</collation>
+      </database>
+      <schema id="2" parent="1" name="dbo">
+        <object-id>1</object-id>
+        <introspection-timestamp>2012-01-08.04:37:34.420</introspection-timestamp>
+      </schema>
+      <table id="3" parent="2" name="MSreplication_options">
+        <object-id>1787153412</object-id>
+        <created-timestamp>2012-02-10.21:14:19.113</created-timestamp>
+        <modified-timestamp>2012-02-10.21:14:52.690</modified-timestamp>
+      </table>
+      <table id="4" parent="2" name="spt_fallback_db">
+        <object-id>117575457</object-id>
+        <created-timestamp>2003-04-08.09:18:01.557</created-timestamp>
+        <modified-timestamp>2012-02-10.21:14:52.657</modified-timestamp>
+      </table>
+      <table id="5" parent="2" name="spt_fallback_dev">
+        <object-id>133575514</object-id>
+        <created-timestamp>2003-04-08.09:18:02.870</created-timestamp>
+        <modified-timestamp>2012-02-10.21:14:52.667</modified-timestamp>
+      </table>
+      <table id="6" parent="2" name="spt_fallback_usg">
+        <object-id>149575571</object-id>
+        <created-timestamp>2003-04-08.09:18:04.180</created-timestamp>
+        <modified-timestamp>2012-02-10.21:14:52.673</modified-timestamp>
+      </table>
+      <table id="7" parent="2" name="spt_monitor">
+        <object-id>1483152329</object-id>
+        <created-timestamp>2012-02-10.21:02:08.440</created-timestamp>
+        <modified-timestamp>2012-02-10.21:14:52.683</modified-timestamp>
+      </table>
+      <table id="8" parent="2" name="sysmatrixageforget">
+        <object-id>83</object-id>
+        <created-timestamp>2012-02-10.20:15:59.927</created-timestamp>
+        <modified-timestamp>2012-02-10.20:15:59.933</modified-timestamp>
+      </table>
+      <view id="9" parent="2" name="spt_values">
+        <object-id>1467152272</object-id>
+        <created-timestamp>2012-02-10.21:02:07.743</created-timestamp>
+        <modified-timestamp>2012-02-10.21:02:07.953</modified-timestamp>
+      </view>
+      <routine id="10" parent="2" name="sp_MScleanupmergepublisher">
+        <object-id>1819153526</object-id>
+        <created-timestamp>2012-02-10.21:14:20.183</created-timestamp>
+        <modified-timestamp>2012-02-10.21:14:52.710</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <routine id="11" parent="2" name="sp_MSrepl_startup">
+        <object-id>1803153469</object-id>
+        <created-timestamp>2012-02-10.21:14:19.750</created-timestamp>
+        <modified-timestamp>2012-02-10.21:14:52.700</modified-timestamp>
+        <routine-kind>PROCEDURE</routine-kind>
+        <type>PROC</type>
+      </routine>
+      <column id="12" parent="3" name="optname">
+        <mandatory>1</mandatory>
+        <data-type>sysname</data-type>
+      </column>
+      <column id="13" parent="3" name="value">
+        <mandatory>1</mandatory>
+        <data-type>bit</data-type>
+      </column>
+      <column id="14" parent="3" name="major_version">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="15" parent="3" name="minor_version">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="16" parent="3" name="revision">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="17" parent="3" name="install_failures">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="18" parent="4" name="xserver_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="19" parent="4" name="xdttm_ins">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="20" parent="4" name="xdttm_last_ins_upd">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="21" parent="4" name="xfallback_dbid">
+        <data-type>smallint</data-type>
+      </column>
+      <column id="22" parent="4" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="23" parent="4" name="dbid">
+        <mandatory>1</mandatory>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="24" parent="4" name="status">
+        <mandatory>1</mandatory>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="25" parent="4" name="version">
+        <mandatory>1</mandatory>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="26" parent="5" name="xserver_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="27" parent="5" name="xdttm_ins">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="28" parent="5" name="xdttm_last_ins_upd">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="29" parent="5" name="xfallback_low">
+        <data-type>int</data-type>
+      </column>
+      <column id="30" parent="5" name="xfallback_drive">
+        <data-type>char(2)</data-type>
+      </column>
+      <column id="31" parent="5" name="low">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="32" parent="5" name="high">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="33" parent="5" name="status">
+        <mandatory>1</mandatory>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="34" parent="5" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="35" parent="5" name="phyname">
+        <mandatory>1</mandatory>
+        <data-type>varchar(127)</data-type>
+      </column>
+      <column id="36" parent="6" name="xserver_name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="37" parent="6" name="xdttm_ins">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="38" parent="6" name="xdttm_last_ins_upd">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="39" parent="6" name="xfallback_vstart">
+        <data-type>int</data-type>
+      </column>
+      <column id="40" parent="6" name="dbid">
+        <mandatory>1</mandatory>
+        <data-type>smallint</data-type>
+      </column>
+      <column id="41" parent="6" name="segmap">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="42" parent="6" name="lstart">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="43" parent="6" name="sizepg">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="44" parent="6" name="vstart">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="45" parent="7" name="lastrun">
+        <mandatory>1</mandatory>
+        <data-type>datetime</data-type>
+      </column>
+      <column id="46" parent="7" name="cpu_busy">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="47" parent="7" name="io_busy">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="48" parent="7" name="idle">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="49" parent="7" name="pack_received">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="50" parent="7" name="pack_sent">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="51" parent="7" name="connections">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="52" parent="7" name="pack_errors">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="53" parent="7" name="total_read">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="54" parent="7" name="total_write">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="55" parent="7" name="total_errors">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="56" parent="8" name="usage">
+        <mandatory>1</mandatory>
+        <data-type>tinyint</data-type>
+      </column>
+      <column id="57" parent="8" name="brick_id">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="58" parent="8" name="database_id">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="59" parent="8" name="recovery_unit_id">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="60" parent="8" name="persisted_age">
+        <mandatory>1</mandatory>
+        <data-type>bigint</data-type>
+      </column>
+      <column id="61" parent="8" name="min_xact_begin_age">
+        <mandatory>1</mandatory>
+        <data-type>bigint</data-type>
+      </column>
+      <column id="62" parent="8" name="offline_age">
+        <mandatory>1</mandatory>
+        <data-type>bigint</data-type>
+      </column>
+      <index id="63" parent="8" name="cl">
+        <columns>usage
+brick_id
+database_id
+recovery_unit_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+        <clustering>1</clustering>
+        <position>1</position>
+      </index>
+      <column id="64" parent="9" name="name">
+        <data-type>nvarchar(35)</data-type>
+      </column>
+      <column id="65" parent="9" name="number">
+        <mandatory>1</mandatory>
+        <data-type>int</data-type>
+      </column>
+      <column id="66" parent="9" name="type">
+        <mandatory>1</mandatory>
+        <data-type>nchar(3)</data-type>
+      </column>
+      <column id="67" parent="9" name="low">
+        <data-type>int</data-type>
+      </column>
+      <column id="68" parent="9" name="high">
+        <data-type>int</data-type>
+      </column>
+      <column id="69" parent="9" name="status">
+        <data-type>int</data-type>
+      </column>
+    </database-model>
+  </data-source>
+</component>
